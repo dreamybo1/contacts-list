@@ -1,0 +1,41 @@
+button, input {
+    min-width: 50px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: .4rem;
+    transition: background-color .1s ease-in-out;
+}
+
+button {
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(133, 141, 228);
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: rgb(133, 141, 228);
+        color: white;
+    }
+}
+
+
+input {
+    border: 3px solid rgb(228, 133, 133);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.552);
+    }
+
+    &::placeholder {
+        font-size: .35rem;
+    }
+
+}

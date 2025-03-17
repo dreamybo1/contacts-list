@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        Contacts
+    </header>
+    <main class="main">
+        <form class="form">
+            <div class="inputs-wrapper">
+                <input name="name" placeholder="Name" type="text" class="name-input">
+                <input name="vacancy" placeholder="Vacancy" type="text" class="vacancy-input">
+                <input name="phone" placeholder="Phone" type="tel" class="phone-input">
+            </div>
+            <div class="buttons-wrapper">
+                <button type="button" class="add-button">ADD</button>
+                <button type="button" class="clear-button">CLEAR</button>
+                <button type="button" class="search-button">SEARCH</button>
+            </div>
+        </form>
+        <div class="content">
+            <div class="list"></div>
+            <div class="list-item__info"></div>
+
+        </div>
+    </main>
+    <canvas style="filter: blur(6px);position: absolute; left: 0; top: 0; z-index: -1;" id="sceneCanvas"></canvas>
+    <script src="./js/bg.js"></script>
+    <script defer src="./js/index.js"></script>
+</body>
+</html>
