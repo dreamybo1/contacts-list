@@ -434,8 +434,8 @@ function createUserItem (user, firstLetter, placeToInsert) {
     const editImg = document.createElement('img')
     const deleteImg = document.createElement('img')
 
-    editImg.src = "./images/edit.svg"
-    deleteImg.src = "./images/delete.svg"
+    editImg.src = "images/edit.svg"
+    deleteImg.src = "images/delete.svg"
 
     editBtn.classList.add('edit-btn')
     deleteBtn.classList.add('delete-btn')
