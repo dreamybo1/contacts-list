@@ -13,6 +13,8 @@ let filteredContactsArr = []
 
 let choosenData;
 
+let searchStr = "";
+
 let timeoutEmpty;
 
 const letters = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
@@ -279,7 +281,18 @@ function openEditModal (user) {
         } else {
             contacts[firstLetterConst] = contacts[firstLetterConst].filter(el => id !== el.id)
             contacts[firstLetter].push({id, name, vacancy, phone})
-            filteredContactsArr = filteredContactsArr.filter(el => el.id !== id)
+
+            if(searchStr) {
+                filteredContactsArr = Object.values(contacts).reduce((acc, curr) => {
+                    return [...acc, ...curr]
+                }, []).filter((el) => {
+                    return el.name.toLowerCase().includes(searchStr.toLowerCase())
+                })
+            } else {
+                filteredContactsArr = Object.values(contacts).reduce((acc, curr) => {
+                    return [...acc, ...curr]
+                }, [])
+            }
 
         }
 
@@ -379,7 +392,8 @@ function openSearchModal () {
     renderItems()
 
     searchInput.oninput = ({target}) => {
-        if (!target.value.trim()) {            
+        searchStr = target.value
+        if (!searchStr.trim()) {            
             filteredContactsArr = Object.values(contacts).reduce((acc, curr) => {
                 return [...acc, ...curr]
             }, [])
@@ -391,7 +405,7 @@ function openSearchModal () {
             return [...acc, ...curr]
         }, [])
         filteredContactsArr = allContactsArr.filter(({name}) => {
-            return name.toLowerCase().includes(target.value.toLowerCase())      
+            return name.toLowerCase().includes(searchStr.toLowerCase())      
         })
     
         renderItems()     
