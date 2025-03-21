@@ -33,7 +33,6 @@ body {
     flex-direction: column;
     padding: 30px;
     min-height: 100vh;
-    gap: 50px;
 }
 
 .header {
@@ -46,6 +45,7 @@ body {
     border-bottom: 5px solid black;
     border-radius: 5px;
     background-color: rgba(154, 158, 188, 0.313);
+    margin-bottom: 50px;
 }
 
 .main {
@@ -408,8 +408,8 @@ body {
 }
 
 @media (max-width: 650px) {
-    body {
-        gap: 30px;
+    .header {
+        margin-bottom: 30px;
     }
 
     .list-item__info_opened {
